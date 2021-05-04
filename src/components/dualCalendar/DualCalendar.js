@@ -9,6 +9,9 @@ import useFetch from 'use-http'
 import utc from 'dayjs/plugin/utc'
 import { getToday } from '../../utils/getToday'
 import colors from '../../constants/colors'
+import config from '../../config'
+import RightArrow from "../../assets/right-arrow"
+
 dayjs.extend(utc)
 
 const initialState = {
@@ -60,7 +63,7 @@ const DualCalendar = () => {
     dispatch({ type: 'setAvailability', payload: availability })
   }
 
-  const { error } = useFetch(`https://rnters-pr-161.herokuapp.com/api/items/21/availability?start_at=${today.format('YYYY/MM/DD')}&end_at=${getCalendarEndDate(month).format('YYYY/MM/DD')}&interval=true`, { onNewData }, [month])
+  const { error } = useFetch(`${config.serverUrl}/items/21/availability?start_at=${today.format('YYYY/MM/DD')}&end_at=${getCalendarEndDate(month).format('YYYY/MM/DD')}&interval=true`, { onNewData }, [month])
 
   return (
     <S.Wrapper>
@@ -71,9 +74,9 @@ const DualCalendar = () => {
       {startDate && !endDate && <S.Notification>Alugar de {startDate.day.format('DD/MM/YYYY')} a: </S.Notification>}
       {startDate && endDate && <S.Notification>Alugar de {startDate.day.format('DD/MM/YYYY')} a {endDate.day.format('DD/MM/YYYY')} </S.Notification>}
       <S.Navigation>
-        <S.Arrow role='button' left visible={month > 0} onClick={() => dispatch({ type: 'prevMonth' })}><i className='glyphicon glyphicon-chevron-left' /></S.Arrow>
+        <S.Arrow role='button' left visible={month > 0} onClick={() => dispatch({ type: 'prevMonth' })}><RightArrow/></S.Arrow>
         {startDate && <S.Clean role='button' onClick={() => dispatch({ type: 'clearPeriod' })}>Limpar seleção</S.Clean>}
-        <S.Arrow role='button' onClick={() => dispatch({ type: 'nextMonth' })}> <i className='glyphicon glyphicon-chevron-right' /> </S.Arrow>
+        <S.Arrow role='button' onClick={() => dispatch({ type: 'nextMonth' })}><RightArrow/></S.Arrow>
       </S.Navigation>
       <S.Calendars>
         <Calendar
@@ -91,8 +94,8 @@ const DualCalendar = () => {
         />
       </S.Calendars>
       <S.Caption color={colors.unavailable}><div /> Indisponivel</S.Caption>
-      <S.Caption color={colors.confirmed}><div />Pedidos de disponibilidade onde o dono do item respondeu afirmativamente</S.Caption>
-      <S.Caption color={colors.requested}><div />Pedidos de disponibilidade onde o dono ainda não respondeu</S.Caption>
+      <S.Caption color={colors.confirmed}><div />Pedidos de disponibilidade onde o Owner respondeu afirmativamente</S.Caption>
+      <S.Caption color={colors.requested}><div />Pedidos de disponibilidade onde o Owner ainda não respondeu</S.Caption>
       {startDate && endDate &&
         <div>
           <div className='items__quick_booking_container'>

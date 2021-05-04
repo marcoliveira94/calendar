@@ -12,9 +12,9 @@ export const Navigation = styled.div`
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: 30px;
+    top: 40px;
     @media (max-width: 1768px) {
-        top: 385px;
+        top: 420px;
     }
 `
 
@@ -40,6 +40,12 @@ export const Notification = styled.div`
 export const Arrow = styled.div`
     visibility: ${props => !props.visible && props.left ? 'hidden' : 'initial'};
     cursor: pointer;
+    & > svg {
+        width: 20px;
+        height: 20px;
+        ${props => props.left && 'transform: rotate(180deg)'}
+        
+    }
 `
 
 export const Clean = styled.div`
