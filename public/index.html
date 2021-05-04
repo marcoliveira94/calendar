@@ -1,43 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html lang="pt">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,900|">
+  <link rel="stylesheet" media="all" href="https://d3urocn5qjrv7i.cloudfront.net/assets/application-5fa3c022bbcaba96dab1a1cf8afd5c658b0b3dedcb7e9214ecac4298b2eee726.css"
+    data-turbolinks-track="true" />
+    <link rel="stylesheet" href="./index.css">
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <script
+    src="https://d3urocn5qjrv7i.cloudfront.net/assets/application-879ef32b6399e4a14b3155c809b062f36723715564f63630043b02a049191ed6.js"
+    data-turbolinks-track="true"></script>
+</head>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<body class=" items show" data-userid="" data-controller="items" data-action="show">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHM3C4V" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="loader-wrapper">
+    <div class="container cn">
+      <i class="far fa-compass fa-spin fa-3x fa-fw"></i>
+    </div>
+  </div>
+  <nav class="navbar navbar-fixed-top ">
+    <div class="container-fluid">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <div class="navbar-brand">
+          <a href="/pt">
+            <img
+              src="https://d3urocn5qjrv7i.cloudfront.net/assets/logo_simple_small-45464c79c00c4d2f0a0e8e10c6b647eb2b8b569ed4abda9a906fca3f72d6e347.png"
+              alt="Logo simple small" />
+          </a> </div>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-menu"
+          aria-expanded="false">
+          <i class="fas fa-ellipsis-h"></i>
+        </button>
+      </div>
+
+      <div id="navbar-collapse-menu" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li id="btn_become_owner" class="btn_navbar navbar_option"><a class="monetize_btn"
+              href="/pt/pages/make_money">Adicionar artigos</a></li>
+
+          <!-- STATIC PAGES // KNOW MORE -->
+          <li class="btn_navbar not_visible_mobile_lg">
+            <div class="dropdown">
+              <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown"
+                class="dropdown-toggle">
+                <span>Saber mais</span> <span class="caret"></span>
+              </a>
+              <ul id="know_more_selector" class="dropdown-menu">
+                <li><a id="how_it_works" class="navbar_option" href="/pt/pages/how_it_works">Como funciona</a></li>
+                <li><a id="make_money" class="navbar_option" href="/pt/pages/make_money">Owner: Lucrar com o que está
+                    parado</a></li>
+                <li><a id="rent_stuff" class="navbar_option" href="/pt/pages/rent_stuff">Renter: Como alugar os meus
+                    artigos</a></li>
+                <li><a id="security" class="navbar_option" href="/pt/pages/security">Segurança</a></li>
+              </ul>
+            </div>
+          </li>
+          <!-- STATIC PAGES // KNOW MORE (MOBILE ONLY) -->
+          <li id="btn_how_it_works" class="btn_navbar only_visible_mobile_lg navbar_option"><a
+              href="/pt/pages/how_it_works">Como funciona</a></li>
+          <li id="btn_make_money" class="btn_navbar only_visible_mobile_lg navbar_option"><a
+              href="/pt/pages/make_money">Owner: Lucrar com o que está parado</a></li>
+          <li id="btn_rent_stuff" class="btn_navbar only_visible_mobile_lg navbar_option"><a
+              href="/pt/pages/rent_stuff">Renter: Como alugar os meus artigos</a></li>
+          <li id="btn_security" class="btn_navbar only_visible_mobile_lg navbar_option"><a
+              href="/pt/pages/security">Segurança</a></li>
+
+          <li class="btn_navbar">
+            <a class="navbar_option" id="btn_sign_in" href="/pt/users/sign_in">Entrar</a>
+          </li>
+          <li class="btn_navbar">
+            <a class="navbar_option" id="btn_sing_up" href="/pt/users/sign_up">Registar</a>
+          </li>
+
+          <!-- LANGUAGE BUTTON -->
+          <li class="btn_navbar not_visible_mobile_lg">
+            <div class="dropdown">
+              <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown"
+                class="dropdown-toggle">
+                <span>pt</span> <span class="caret"></span>
+              </a>
+              <ul id="language_selector" class="dropdown-menu">
+                <li><a data-turbolinks="false"
+                    href="/pt/items/1960-porto-portugal-alugar-babolat-pure-drive-raquete-tenis?change_locale=true">Português</a>
+                </li>
+                <li><a data-turbolinks="false"
+                    href="/en/items/1960-porto-portugal-alugar-babolat-pure-drive-raquete-tenis?change_locale=true">English</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="btn_navbar only_visible_mobile_lg"><a data-turbolinks="false"
+              href="/pt/items/1960-porto-portugal-alugar-babolat-pure-drive-raquete-tenis?change_locale=true">Português</a>
+          </li>
+          <li class="btn_navbar only_visible_mobile_lg"><a data-turbolinks="false"
+              href="/en/items/1960-porto-portugal-alugar-babolat-pure-drive-raquete-tenis?change_locale=true">English</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="flash_messages-anchor">
+  </div>
+
+  <!-- Vars for GTM -->
+  <input type="hidden" name="item_id" id="item_id" value="1960" />
+  <input type="hidden" name="item_title" id="item_title" value="Babolat Pure Drive - Raquete Ténis" />
+  <input type="hidden" name="item_price" id="item_price" value="4.94" />
+  <div class="item__detail item__detail_long">
+    <div class="row item_page_row">
+      <div class="col-sm-8 item_page_left_column" style="">
+        <div class="panel" style="margin-bottom:10px;">
+          <div class="row">
+            <div class="col-xs-12">
+              <!-- Carousel -->
+              <div id="carousel-1960" class="carousel items__page_carousel cn  slide item__carousel"
+                data-ride="carousel" data-interval="false">
+                <div class="carousel-caption">
+                  <p>
+                    <div class="item__tag_label">
+                      <a href="/pt/items/search?q=Desporto">Desporto</a>
+                    </div>
+                  </p>
+                </div>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img alt="Babolat Pure Drive - Raquete Ténis" class="img-responsive center-block"
+                      src="https://dc3h9n0uz6yfs.cloudfront.net/item_photos/photos/000/004/739/large/101334_1_5.jpg?1583404891" />
+                  </div>
+                </div>
+
+              </div>
+              <!-- Carousel -->
+            </div>
+          </div>
+          <div class="row" style="padding: 0px 20px;">
+            <div class="col-xs-12" style="">
+              <div class="col-xs-10">
+                <h1 id="item_title"><b>Item Name</b></h1>
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <span class="item_page_green_all_caps_title"> <i class="glyphicon glyphicon-map-marker"></i> Porto,
+                Portugal</span>
+            </div>
+          </div>
+
+          <div class="row" style="padding: 0px 20px 40px 20px;">
+            <div class="col-xs-12">
+              Weight unstrung 300 g
+              Technology Cortex Pure Feel, FSI Power, GT Technology, Elliptic Beam
+              Composition GRAPHITE
+              Head Size 99.98 in² / 645 cm²
+              Length 26.97 in / 68.5 cm
+              Stiffness 72 RA
+              Balance unstrung 12.6 in / 32 cm
+              Beam Width 23-26-23 mm
+              String Pattern 16X19
+            </div>
+          </div>
+          <!-- Comment section -->
+          <!-- END of Comment section -->
+        </div>
+        <div class="col-xs-12 text-center not_visible_mobile" style="color:grey">
+          <div class="" style="">
+            <div class="col-xs-2 text-center">
+              <small><b>SABIAS QUE?</b></small>
+            </div>
+            <div class="col-xs-10 text-left">
+              <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="7000"
+                style="background: transparent !important;">
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <small>Alugar é, em média, 90% mais barato que comprar. <span
+                        class="glyphicon glyphicon-piggy-bank"></span> </small>
+                  </div>
+                  <div class="item">
+                    <small>Podes aumentar o teu rendimento mensal até 20% alugando as tuas coisas. <span
+                        class="glyphicon glyphicon-circle-arrow-up"></span></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 item_page_right_column" style="">
+        <div class="col-xs-12">
+          <div class="panel panel-default user__info_panel" style="margin-bottom:10px !important;">
+            <div class="user__info_panel_body">
+              <div class="row" style="display: flex; align-items: center;">
+                <div class="col-xs-2">
+                  <div style="width: 50px; height: 50px; overflow: hidden; border-radius:50%; margin: 0 auto;">
+                    <a href="/pt/profile/9194"><img
+                        style="width: 100%; height: auto; min-width: 50px; min-height: 50px;"
+                        src="https://dc3h9n0uz6yfs.cloudfront.net/users/avatars/000/009/194/thumb_medium/picture?1583404198"
+                        alt="Picture?1583404198" /></a>
+                  </div>
+                </div>
+                <div class="col-xs-7">
+                  <!-- <a href="/pt/profile/9194"><img style="min-height:70px;" src="https://dc3h9n0uz6yfs.cloudfront.net/users/avatars/000/009/194/thumb_medium/picture?1583404198" alt="Picture?1583404198" /></a> -->
+                  <div class="user__info_name_social_links_and_level">
+                    <strong><a id="owner_name" href="/pt/profile/9194">Owner Name</a></strong>
+                    <i class="glyphicon glyphicon-ok-sign"></i>
+                  </div>
+                </div>
+                <div class="col-xs-3 user__info_rating cn">
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-xs-12">
+            <div class="panel panel-default item__details_panel ">
+
+              <div class="item__detail_price">
+                <strong>€00,00</strong> / dia
+
+              </div>
+
+              <div class="panel-body text-center">
+                <div id="root"></div>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="text-center" style="">
+            <small> <a id="info_zone_link" href="#info_zone_row">Como funciona</a> / <a id="feedback_zone_link"
+                href="#feedback_zone_row">Feedback</a></small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="item_small_map" class="small_map"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="not_visible_mobile">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4 footer_section">
+            <p><b>LINKS ÚTEIS</b></p>
+            <p><a href="/pt/pages/security">Garantia SafeStuff</a></p>
+            <p><a href="/pt/pages/faq">FAQ</a></p>
+            <p><a href="/pt/pages/terms">Termos de Serviço</a></p>
+            <p><a href="/pt/pages/privacy">Política de Privacidade</a></p>
+            <!-- <p class="footer__logo">RNTERS</p> -->
+          </div>
+          <div class="col-sm-4 footer_section text-left">
+            <p><b>CONNECT</b></p>
+            <p class="footer__subscribe_text">Não percas as novidades!</p>
+            <form class="footer__subscribe_form form-inline" action="/pt/subscribe_newsletter" accept-charset="UTF-8"
+              method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden"
+                name="authenticity_token"
+                value="pj0JuSmlvEehsiycv4Jpmnz80EhkXOAtf5B+F5W1lYna7Q+AH57LBflwQ59FpaNSm+qyQGVYlpyO3eWhoP5dlw==" />
+              <div class="row" style="margin-bottom: 10px;">
+                <div class="col-xs-6">
+                  <input placeholder="O teu email" class="form-control" required="required" type="email" name="[email]"
+                    id="_email" />
+                </div>
+                <div class="col-xs-6">
+                  <input type="submit" name="commit" value="Subscreve" class="btn btn-primary" />
+                </div>
+              </div>
+            </form>
+            <p><a class="social_icons" href="https://www.facebook.com/Rnters-452745608263925"><i
+                  class="fab fa-facebook-f fa-lg"></i> Like and share</a></p>
+            <p><a class="social_icons" href="https://www.instagram.com/rnters.pt/"><i
+                  class="fab fa-instagram fa-lg"></i> Follow us</a></p>
+          </div>
+          <div class="col-sm-4 footer_section">
+            <p><b style="text-transform:uppercase;">Para mais informações contacta:</b></p>
+            <div class="row">
+              <div class="col-sm-2">
+                <img style="height:50px;"
+                  src="https://d3urocn5qjrv7i.cloudfront.net/assets/logo_brand_primary-576ad0b1b49e8bde9dd8c6ffa1ae8384c65f3fb696589c69897463951fcab743.png"
+                  alt="Logo brand primary" />
+              </div>
+              <div class="col-sm-10">
+                <p>
+                  <a data-turbolinks="false"
+                    href="/en/items/1960-porto-portugal-alugar-babolat-pure-drive-raquete-tenis?change_locale=true">English</a>
+                  |
+                  <a data-turbolinks="false"
+                    href="/pt/items/1960-porto-portugal-alugar-babolat-pure-drive-raquete-tenis?change_locale=true">Português</a>
+                </p>
+                <p><a class="social_icons" href="mailto:info@rnters.com"><i class="fas fa-envelope fa-lg"></i>
+                    info@rnters.com</a></p>
+                <p>2016-2020 Rnters &copy;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+
 </html>
